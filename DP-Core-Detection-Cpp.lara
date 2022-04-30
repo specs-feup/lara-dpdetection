@@ -1,0 +1,32 @@
+
+import lcl.LaraCommonLanguage;
+import lcl.patterns.PatternsReader;
+import lcl.patterns.DetectionAlgorithm;
+import lcl.patterns.DetectionAlgorithmTests;
+
+aspectdef Relations
+
+	var patternsRootDir = "/Users/hugo/Documents/Education/MESW/Year-2/Tese/workspace/other-tools/DP-CORE/patterns/";
+	
+	detect(patternsRootDir + "Observer.pattern");			// 5 - 1 right, 4 wrong (visitors)
+	detect(patternsRootDir + "Visitor.pattern"); 			// 4 - 4 right
+	detect(patternsRootDir + "Command.pattern"); 			// 2 - 1 right, 1 wrong (builder)
+	detect(patternsRootDir + "Builder.pattern");			// 1 - 1 right
+	detect(patternsRootDir + "Bridge.pattern");			// 2 - 2 right
+	detect(patternsRootDir + "Abstract Factory.pattern");	// 4 - 4 right
+	
+end
+
+function detect(patternFile) {
+
+	print(patternFile.substring(patternFile.lastIndexOf("/") + 1));
+	
+	var pattern = PatternsReader.readPattern(patternFile);
+	var algorithm = new DetectionAlgorithm(pattern.members, pattern.connections);
+	var detections = algorithm.detect();
+
+	println(); for (var detection of detections) println(detection);
+	println(" => " + detections.length);
+}
+
+
