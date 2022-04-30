@@ -1,4 +1,5 @@
 
+import weaver.WeaverOptions;
 import lcl.LaraCommonLanguage;
 import lcl.patterns.PatternsReader;
 import lcl.patterns.DetectionAlgorithm;
@@ -6,15 +7,22 @@ import lcl.patterns.DetectionAlgorithmTests;
 
 aspectdef Relations
 
-	var patternsRootDir = "/Users/hugo/Documents/Education/MESW/Year-2/Tese/workspace/other-tools/DP-CORE/patterns/";
-	// patternsRootDir = "../../../DP Detection/patterns/";
+	var patternsRootDir = WeaverOptions.getData().getContextFolder() + "/patterns/";
 	
-	detect(patternsRootDir + "Observer.pattern");		// 4 - 1 right, 3 wrong (visitors)
-	detect(patternsRootDir + "Visitor.pattern"); 		// 4 - 4 right
-	detect(patternsRootDir + "Command.pattern"); 		// 2 - 1 right, 1 wrong (builder)
-	detect(patternsRootDir + "Builder.pattern");			// 1 - 1 right
-	detect(patternsRootDir + "Bridge.pattern");			// 2 - 2 right
-	detect(patternsRootDir + "Abstract Factory.pattern");	// 4 - 4 right
+	detect(patternsRootDir + "Observer.pattern");
+	detect(patternsRootDir + "Visitor.pattern");
+	detect(patternsRootDir + "Command.pattern");
+	detect(patternsRootDir + "Builder.pattern");
+	detect(patternsRootDir + "Bridge.pattern");
+	detect(patternsRootDir + "Abstract Factory.pattern");
+
+	// 				C++				Java
+	// Observer		5 (4 visitors)		4 (2 visitors)
+	// Visitor		4				2
+	// Command		2 (1 builder)		4 (2 builder)
+	// Builder		1				2
+	// Bridge			2				4
+	// Abstract Factory	4				4
 	
 end
 
