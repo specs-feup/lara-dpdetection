@@ -3,12 +3,18 @@ import weaver.WeaverOptions;
 import lcl.LaraCommonLanguage;
 import lcl.patterns.PatternsReader;
 import lcl.patterns.DetectionAlgorithm;
-import lcl.patterns.DetectionAlgorithmTests;
+import lcl.patterns.DetectionAlgorithmLight;
+
+var PRINT_DETAILS = false;
+var PRINT_RELATIONS = false;
+var ALGORITHM_LIGHT = true;
 
 aspectdef Relations
 
 	var patternsRootDir = WeaverOptions.getData().getContextFolder() + "/patterns/";
-	
+
+
+	// detect(patternsRootDir + "Visitor.pattern"); if (true) return;
 	detect(patternsRootDir + "Observer.pattern");
 	detect(patternsRootDir + "Visitor.pattern");
 	detect(patternsRootDir + "Command.pattern");
@@ -19,7 +25,7 @@ aspectdef Relations
 	// 				C++				Java
 	// Observer		5 (4 visitors)		4 (2 visitors)
 	// Visitor		4				2
-	// Command		2 (1 builder)		4 (2 builder)
+	// Command		1				4 (2 builder)
 	// Builder		1				2
 	// Bridge			2				4
 	// Abstract Factory	4				4
@@ -27,15 +33,46 @@ aspectdef Relations
 end
 
 function detect(patternFile) {
-	
-	var pattern = PatternsReader.readPattern(patternFile);
-	var algorithm = new DetectionAlgorithm(pattern.members, pattern.connections);
-	var detections = algorithm.detect();
 
 	print(patternFile.substring(patternFile.lastIndexOf("/") + 1));
+	
+	var pattern = PatternsReader.readPattern(patternFile);
+	if (ALGORITHM_LIGHT) {
+		var algorithm = new DetectionAlgorithmLight(pattern.members, pattern.connections);
+	}
+	else {
+		var algorithm = new DetectionAlgorithm(pattern.members, pattern.connections);
+	}
+		
+	var detections = algorithm.detect();
+	
 	println(" => " + detections.length); 
+	if (PRINT_RELATIONS) printRelations(algorithm);
+	if (PRINT_DETAILS) printDetails(detections);
+}
+
+function printDetails(detections) {
+	detections.sort((a, b) => {
+		if (a[0] > b[0]) return 1;
+		if (a[0] < b[0]) return -1;
+	  	return 0;
+	});
 	for (var detection of detections) println(" - " + detection);
 	println();
+}
+
+function printRelations(algorithm) {
+
+	algorithm.classTypesMap.forEach((classTypeObject, classTypeName) => {
+		
+		println(classTypeName);
+		println(" - calls      " + classTypeObject.relationCalls);
+		println(" - creates    " + classTypeObject.relationCreates);
+		println(" - has        " + classTypeObject.relationHas);
+		println(" - inherits   " + classTypeObject.relationInherits);
+		println(" - references " + classTypeObject.relationReferences);
+		println(" - uses       " + classTypeObject.relationUses);
+	});
 }
 
 
