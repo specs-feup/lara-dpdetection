@@ -4,31 +4,31 @@ import lcl.LaraCommonLanguage;
 import lcl.patterns.PatternsReader;
 import lcl.patterns.DetectionAlgorithm;
 import lcl.patterns.DetectionAlgorithmLight;
+import lcl.patterns.grouping.GroupingUtils;
 
 var PRINT_DETAILS = false;
 var PRINT_RELATIONS = false;
-var ALGORITHM_LIGHT = true;
+var ALGORITHM_LIGHT = false;
+var DP_CORE_COMPATIBILITY = false;
 
 aspectdef Relations
 
 	var patternsRootDir = WeaverOptions.getData().getContextFolder() + "/patterns/";
 
-
-	// detect(patternsRootDir + "Visitor.pattern"); if (true) return;
 	detect(patternsRootDir + "Observer.pattern");
-	detect(patternsRootDir + "Visitor.pattern");
+	detect(patternsRootDir + "Visitor.pattern"); 
 	detect(patternsRootDir + "Command.pattern");
 	detect(patternsRootDir + "Builder.pattern");
 	detect(patternsRootDir + "Bridge.pattern");
 	detect(patternsRootDir + "Abstract Factory.pattern");
 
-	// 				C++				Java
-	// Observer		5 (4 visitors)		4 (2 visitors)
-	// Visitor		4				2
-	// Command		1				4 (2 builder)
-	// Builder		1				2
-	// Bridge			2				4
-	// Abstract Factory	4				4
+	// 				C++					Java
+	// Observer		5 (4 visitors)	5 3		4 (2 visitors) / 3 3
+	// Visitor		4			4 2		2			/ 1 1
+	// Command		1			1 1		4 (2 builder)	/ 2 2
+	// Builder		1			1 1		2			/ 1 1
+	// Bridge			2			2 1		4			/ 4 2
+	// Abstract Factory	4			4 4		4			/ 2 1
 	
 end
 
@@ -43,10 +43,14 @@ function detect(patternFile) {
 	else {
 		var algorithm = new DetectionAlgorithm(pattern.members, pattern.connections);
 	}
-		
+
+	algorithm.setCompatibility(DP_CORE_COMPATIBILITY);
 	var detections = algorithm.detect();
 	
-	println(" => " + detections.length); 
+	print(" => " + detections.length); 
+	print(" , " + GroupingUtils.findSuperCandidates(pattern, detections).length); 
+	print(" , " + GroupingUtils.findHyperCandidates(pattern, GroupingUtils.findSuperCandidates(pattern, detections)).length); 
+	println();
 	if (PRINT_RELATIONS) printRelations(algorithm);
 	if (PRINT_DETAILS) printDetails(detections);
 }
