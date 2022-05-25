@@ -8,19 +8,20 @@ import lcl.patterns.grouping.GroupingUtils;
 
 var PRINT_DETAILS = false;
 var PRINT_RELATIONS = false;
-var ALGORITHM_LIGHT = false;
-var DP_CORE_COMPATIBILITY = false;
+var ALGORITHM_LIGHT = true;
+var DP_CORE_COMPATIBILITY = true;
+var ALGORITHM_FULL_NAMING = false;
 
-aspectdef Relations
+aspectdef Detection
 
-	var patternsRootDir = WeaverOptions.getData().getContextFolder() + "/patterns/";
-
-	detect(patternsRootDir + "Observer.pattern");
-	detect(patternsRootDir + "Visitor.pattern"); 
-	detect(patternsRootDir + "Command.pattern");
-	detect(patternsRootDir + "Builder.pattern");
-	detect(patternsRootDir + "Bridge.pattern");
-	detect(patternsRootDir + "Abstract Factory.pattern");
+	detect(algorithm, "Observer.pattern");
+	detect(algorithm, "Visitor.pattern"); 
+	detect(algorithm, "Command.pattern");
+	detect(algorithm, "Builder.pattern");
+	detect(algorithm, "Bridge.pattern");
+	detect(algorithm, "Bridge_v2.pattern");
+	detect(algorithm, "Abstract Factory.pattern");
+	detect(algorithm, "Abstract Factory_v2.pattern");
 
 	// 				C++					Java
 	// Observer		5 (4 visitors)	5 3		4 (2 visitors) / 3 3
@@ -32,20 +33,29 @@ aspectdef Relations
 	
 end
 
-function detect(patternFile) {
+function algorithmOf() {
 
-	print(patternFile.substring(patternFile.lastIndexOf("/") + 1));
-	
-	var pattern = PatternsReader.readPattern(patternFile);
 	if (ALGORITHM_LIGHT) {
-		var algorithm = new DetectionAlgorithmLight(pattern.members, pattern.connections);
+		var algorithm = new DetectionAlgorithmLight([], []);
 	}
 	else {
-		var algorithm = new DetectionAlgorithm(pattern.members, pattern.connections);
+		var algorithm = new DetectionAlgorithm([], []);
 	}
 
 	algorithm.setCompatibility(DP_CORE_COMPATIBILITY);
-	var detections = algorithm.detect();
+	algorithm.setFullNaming(ALGORITHM_FULL_NAMING);
+	algorithm.parseRelations();
+	return algorithm;
+}
+
+function detect(algorithm, patternFile) {
+
+	var patternsRootDir = WeaverOptions.getData().getContextFolder() + "/patterns/";
+
+	print(patternFile);
+	
+	var pattern = PatternsReader.readPattern(patternsRootDir + patternFile);
+	var detections = algorithm.detect(pattern.members, pattern.connections);
 	
 	print(" => " + detections.length); 
 	print(" , " + GroupingUtils.findSuperCandidates(pattern, detections).length); 
@@ -66,6 +76,8 @@ function printDetails(detections) {
 }
 
 function printRelations(algorithm) {
+
+	println("classTypes = " + algorithm.classTypesMap.size);
 
 	algorithm.classTypesMap.forEach((classTypeObject, classTypeName) => {
 		

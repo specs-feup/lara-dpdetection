@@ -20,3 +20,13 @@
 !ant-rel-1.6.2/src/
 /ant-rel-1.6.2/src/*
 !ant-rel-1.6.2/src/main
+
+/cppunit/.vscode/
+/cppunit/autoconf-2.69/
+
+/.archive
+
+/*/.AppleDouble
+/*/.settings
+/*/.uml
+/*/bin
