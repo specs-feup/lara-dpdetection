@@ -14,6 +14,8 @@ var ALGORITHM_FULL_NAMING = false;
 
 aspectdef Detection
 
+	var algorithm = algorithmOf();
+
 	detect(algorithm, "Observer.pattern");
 	detect(algorithm, "Visitor.pattern"); 
 	detect(algorithm, "Command.pattern");
