@@ -83,7 +83,7 @@ function printRelations(algorithm) {
 
 	algorithm.classTypesMap.forEach((classTypeObject, classTypeName) => {
 		
-		println(classTypeName);
+		println(classTypeName + " (" + algorithm.abstractionOf(classTypeObject.classType) + ")");
 		println(" - calls      " + classTypeObject.relationCalls);
 		println(" - creates    " + classTypeObject.relationCreates);
 		println(" - has        " + classTypeObject.relationHas);

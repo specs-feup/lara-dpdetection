@@ -53,10 +53,10 @@ class Abstraction {
   virtual ~Abstraction() {
   }
 
-  virtual std::string Operation() const {
+  virtual std::string Operation() const = 0;/* {
     return "Abstraction: Base operation with:\n" +
            this->implementation_->OperationImplementation();
-  }
+  }*/
 };
 /**
  * You can extend the Abstraction without changing the Implementation classes.
@@ -89,14 +89,14 @@ void ClientCode(const Abstraction& abstraction) {
 
 int main() {
   Implementation* implementation = new ConcreteImplementationA;
-  Abstraction* abstraction = new Abstraction(implementation);
-  ClientCode(*abstraction);
+  // Abstraction* abstraction = new Abstraction(implementation);
+  // ClientCode(*abstraction);
   std::cout << std::endl;
   delete implementation;
-  delete abstraction;
+  // delete abstraction;
 
   implementation = new ConcreteImplementationB;
-  abstraction = new ExtendedAbstraction(implementation);
+  Abstraction* abstraction = new ExtendedAbstraction(implementation);
   ClientCode(*abstraction);
 
   delete implementation;
