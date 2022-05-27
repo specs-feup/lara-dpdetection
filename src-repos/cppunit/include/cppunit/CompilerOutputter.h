@@ -7,13 +7,11 @@
 
 CPPUNIT_NS_BEGIN
 
-/*
 class Exception;
 class SourceLine;
 class Test;
 class TestFailure;
 class TestResultCollector;
-*/
 
 /*! 
  * \brief Outputs a TestResultCollector in a compiler compatible format.

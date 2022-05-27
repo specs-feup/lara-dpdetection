@@ -6,12 +6,10 @@
 
 CPPUNIT_NS_BEGIN
 
-/*
 class Test;
 class TestFailure;
 class XmlDocument;
 class XmlElement;
-*/
 
 
 

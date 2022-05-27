@@ -7,8 +7,8 @@
 CPPUNIT_NS_BEGIN
 
 
-// classTest;
-// class TestResult;
+class Test;
+class TestResult;
 
 
 /*! \brief Decorator that runs a test repeatedly.

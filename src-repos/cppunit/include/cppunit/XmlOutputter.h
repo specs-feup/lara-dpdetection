@@ -16,14 +16,12 @@
 
 CPPUNIT_NS_BEGIN
 
-/*
 class Test;
 class TestFailure;
 class TestResultCollector;
 class XmlDocument;
 class XmlElement;
 class XmlOutputterHook;
-*/
 
 
 /*! \brief Outputs a TestResultCollector in XML format.

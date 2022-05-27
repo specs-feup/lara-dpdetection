@@ -1,7 +1,4 @@
-#ifndef CPPUNIT_TESTPATH_H
-#define CPPUNIT_TESTPATH_H
 
-#include <cppunit/Portability.h>
 
 #if CPPUNIT_NEED_DLL_DECL
 #pragma warning( push )
@@ -10,8 +7,6 @@
 
 #include <deque>
 #include <string>
-
-CPPUNIT_NS_BEGIN
 
 
 class Test;
@@ -26,7 +21,7 @@ class Test;
  *
  * \see Test::resolvedTestPath()
  */
-class CPPUNIT_API TestPath
+class TestPath
 {
 public:
   /*! \brief Constructs an invalid path.
@@ -198,9 +193,3 @@ protected:
   Tests m_tests;
 
 };
-
-
-CPPUNIT_NS_END
-
-#endif // CPPUNIT_TESTPATH_H
-

@@ -15,11 +15,9 @@ struct CppUnitTestPlugIn;
 
 CPPUNIT_NS_BEGIN
 
-/*
 class DynamicLibraryManager;
 class TestResult;
 class XmlOutputter;
-*/
 
 
 /*! \brief Manges TestPlugIn.

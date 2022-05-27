@@ -1,10 +1,6 @@
-#ifndef CPPUNIT_TESTRUNNER_H
-#define CPPUNIT_TESTRUNNER_H
 
 #include <cppunit/TestSuite.h>
 #include <string>
-
-CPPUNIT_NS_BEGIN
 
 class Test;
 class TestResult;
@@ -68,7 +64,7 @@ class TestResult;
  * }
  * \endcode
  */
-class CPPUNIT_API TestRunner
+class TestRunner
 {
 public:
   /*! \brief Constructs a TestRunner object.
@@ -96,7 +92,7 @@ public:
 protected:
   /*! \brief (INTERNAL) Mutating test suite.
    */
-  class CPPUNIT_API WrappingSuite : public TestSuite
+  class WrappingSuite : public TestSuite
   {
   public:
     WrappingSuite( const std::string &name = "All Tests" );
@@ -127,8 +123,3 @@ private:
 
 private:
 };
-
-
-CPPUNIT_NS_END
-
-#endif  // CPPUNIT_TESTRUNNER_H

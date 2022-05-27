@@ -7,11 +7,9 @@
 
 CPPUNIT_NS_BEGIN
 
-/*
 class SourceLine;
 class Exception;
 class Test;
-*/
 
 /*! \brief Holds printable test result (DEPRECATED).
  * \ingroup TrackingTestExecution

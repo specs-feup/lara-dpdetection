@@ -1,9 +1,6 @@
-#ifndef CPPUNIT_PROTECTOR_H
-#define CPPUNIT_PROTECTOR_H
+
 
 #include <cppunit/SourceLine.h>
-
-CPPUNIT_NS_BEGIN
 
 class Exception;
 class Message;
@@ -11,7 +8,7 @@ class ProtectorContext;
 class TestResult;
 
 
-class CPPUNIT_API Functor
+class Functor
 {
 public:
   virtual ~Functor();
@@ -44,7 +41,7 @@ public:
  * - performance tracing : time only the runTest() time.
  * \sa TestResult, TestCase, TestListener.
  */
-class CPPUNIT_API Protector
+class Protector
 {
 public:
   virtual ~Protector();
@@ -73,7 +70,7 @@ protected:
  * Adds the specified Protector to the specified TestResult for the object
  * life-time.
  */
-class CPPUNIT_API ProtectorGuard
+class ProtectorGuard
 {
 public:
   /// Pushes the specified protector.
@@ -88,9 +85,3 @@ private:
   ProtectorGuard& operator=( const ProtectorGuard& ); /* not assignable */
   TestResult *m_result;
 };
-
-CPPUNIT_NS_END
-
-
-#endif // CPPUNIT_PROTECTOR_H
-

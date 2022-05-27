@@ -7,7 +7,7 @@
 CPPUNIT_NS_BEGIN
 
 
-// class TestResult;
+class TestResult;
 
 
 /*! \brief  Decorator for Tests.

@@ -1,10 +1,6 @@
-#ifndef CPPUNIT_TEST_H
-#define CPPUNIT_TEST_H
 
-#include <cppunit/Portability.h>
+
 #include <string>
-
-CPPUNIT_NS_BEGIN
 
 
 class TestResult;
@@ -22,7 +18,7 @@ class TestPath;
  * \see TestCase
  * \see TestSuite
  */
-class CPPUNIT_API Test
+class Test
 {
 public:
   virtual ~Test() {}
@@ -109,9 +105,3 @@ protected:
    */
   virtual Test *doGetChildTestAt( int index ) const =0;
 };
-
-
-CPPUNIT_NS_END
-
-#endif // CPPUNIT_TEST_H
-

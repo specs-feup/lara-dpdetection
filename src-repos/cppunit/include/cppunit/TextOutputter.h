@@ -7,12 +7,10 @@
 
 CPPUNIT_NS_BEGIN
 
-/*
 class Exception;
 class SourceLine;
 class TestResultCollector;
 class TestFailure;
-*/
 
 
 /*! \brief Prints a TestResultCollector to a text stream.

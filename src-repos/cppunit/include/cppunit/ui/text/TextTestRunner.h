@@ -8,14 +8,12 @@
 
 CPPUNIT_NS_BEGIN
 
-/*
 class Outputter;
 class Test;
 class TestSuite;
 class TextOutputter;
 class TestResult;
 class TestResultCollector;
-*/
 
 
 

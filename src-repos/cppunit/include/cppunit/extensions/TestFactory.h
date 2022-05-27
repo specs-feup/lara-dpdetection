@@ -6,7 +6,7 @@
 CPPUNIT_NS_BEGIN
 
 
-// classTest;
+class Test;
 
 /*! \brief Abstract Test factory.
  */

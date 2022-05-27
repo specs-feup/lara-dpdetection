@@ -6,7 +6,7 @@
 CPPUNIT_NS_BEGIN
 
 
-  // classTest;
+  class Test;
 
   /*! \brief TestFactory for TestFixture that implements a static suite() method.
    * \see AutoRegisterSuite.

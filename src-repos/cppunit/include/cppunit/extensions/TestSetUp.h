@@ -6,8 +6,8 @@
 CPPUNIT_NS_BEGIN
 
 
-// class Test;
-// class TestResult;
+class Test;
+class TestResult;
 
 /*! \brief Decorates a test by providing a specific setUp() and tearDown().
  */

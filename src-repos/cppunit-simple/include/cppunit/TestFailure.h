@@ -1,10 +1,5 @@
-#ifndef CPPUNIT_TESTFAILURE_H    // -*- C++ -*-
-#define CPPUNIT_TESTFAILURE_H
 
-#include <cppunit/Portability.h>
 #include <string>
-
-CPPUNIT_NS_BEGIN
 
 class Exception;
 class SourceLine;
@@ -19,7 +14,7 @@ class Test;
  * TestFailure assumes lifetime control for any exception
  * passed to it.
  */
-class CPPUNIT_API TestFailure 
+class TestFailure 
 {
 public:
   TestFailure( Test *failedTest,
@@ -49,8 +44,3 @@ private:
   TestFailure( const TestFailure &other ); 
   TestFailure &operator =( const TestFailure& other ); 
 };
-
-
-CPPUNIT_NS_END
-
-#endif // CPPUNIT_TESTFAILURE_H

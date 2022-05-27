@@ -145,7 +145,7 @@
  *
  * \param ATestFixtureType Type of the test case class. This type \b MUST
  *                         be derived from TestFixture.
- * \param ASuperClass   Type of the parent class.
+ * \param ASuperclass  Type of the parent class.
  * \see CPPUNIT_TEST_SUITE.
  */
 #define CPPUNIT_TEST_SUB_SUITE( ATestFixtureType, ASuperClass )  \
@@ -253,7 +253,7 @@ public:									       \
  * \see CPPUNIT_TEST_SUITE, CPPUNIT_TEST, CPPUNIT_TEST_SUITE_END
  */
 #define CPPUNIT_TEST_FIXTURE(TestClass, TestName)                              \
-    class TestName : public TestClass                                          \
+    class TestName : public Testclass                                         \
     {                                                                          \
     public:                                                                    \
         void TestBody();                                                       \
