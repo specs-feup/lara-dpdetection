@@ -9,7 +9,7 @@
       <string>workspace</string>
       <FileList>
         <fileList>
-          <file>src-cpp</file>
+          <file>code-snippets/cpp</file>
         </fileList>
       </FileList>
     </entry>

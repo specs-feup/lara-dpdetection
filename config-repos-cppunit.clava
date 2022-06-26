@@ -5,7 +5,7 @@
       <string>workspace</string>
       <FileList>
         <fileList>
-          <file>src-repos/cppunit/src</file>
+          <file>projects/Cpp_J-Unit/cppunit_fixed/src</file>
         </fileList>
       </FileList>
     </entry>
@@ -68,7 +68,7 @@
     </entry>
     <entry>
       <string>continueOnParsingErrors</string>
-      <boolean>true</boolean>
+      <boolean>false</boolean>
     </entry>
     <entry>
       <string>Weaved code foldername</string>
@@ -113,7 +113,7 @@
     </entry>
     <entry>
       <string>Disable Code Generation</string>
-      <boolean>true</boolean>
+      <boolean>false</boolean>
     </entry>
     <entry>
       <string>log</string>
@@ -223,7 +223,7 @@
       <string>header includes</string>
       <FileList>
         <fileList>
-          <file>src-repos/cppunit-simple/include</file>
+          <file>projects/Cpp_J-Unit/cppunit_fixed/include</file>
         </fileList>
       </FileList>
     </entry>

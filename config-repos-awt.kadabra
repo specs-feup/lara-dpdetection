@@ -9,7 +9,7 @@
       <string>workspace</string>
       <FileList>
         <fileList>
-          <file>src-repos/jdk6-master/jdk/src/share/classes/java/awt</file>
+          <file>projects/DP-CORE_Projects/awt-jdk6/src</file>
         </fileList>
       </FileList>
     </entry>

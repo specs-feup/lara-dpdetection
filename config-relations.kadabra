@@ -9,7 +9,7 @@
       <string>workspace</string>
       <FileList>
         <fileList>
-          <file>src-java</file>
+          <file>projects/test-project</file>
         </fileList>
       </FileList>
     </entry>

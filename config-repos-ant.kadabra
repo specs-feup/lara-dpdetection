@@ -9,7 +9,7 @@
       <string>workspace</string>
       <FileList>
         <fileList>
-          <file>src-repos/ant-rel-1.6.2/src/main</file>
+          <file>projects/DP-CORE_Projects/ant-rel-1.6.2/src/main</file>
         </fileList>
       </FileList>
     </entry>

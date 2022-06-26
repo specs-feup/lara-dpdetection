@@ -18,6 +18,12 @@
       <boolean>true</boolean>
     </entry>
     <entry>
+      <string>apkPackageFilter</string>
+      <StringList>
+        <stringList/>
+      </StringList>
+    </entry>
+    <entry>
       <string>log</string>
       <OptionalFile>
         <file></file>
@@ -121,7 +127,7 @@
     </entry>
     <entry>
       <string>joptions_current_folder_path</string>
-      <java.util.Optional>%XSTREAM_EMPTY_OPTIONAL%</java.util.Optional>
+      <java.util.Optional isPresent="false"/>
     </entry>
     <entry>
       <string>report</string>

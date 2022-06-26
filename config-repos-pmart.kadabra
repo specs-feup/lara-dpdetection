@@ -9,21 +9,19 @@
       <string>workspace</string>
       <FileList>
         <fileList>
-          <!--file>src-repos/1 - QuickUML 2001/src</file>
-          <file>src-repos/2 - Lexi v0.1.1 alpha/src</file>
-          <file>src-repos/3 - JRefactory v2.6.24/src</file-->
-          <file>src-repos/4 - Netbeans v1.0.x/src</file>
-          <!--file>src-repos/5 - JUnit v3.7/src</file>
-          <file>src-repos/6 - JHotDraw v5.1/src</file>
-          <file>src-repos/8 - MapperXML v1.9.7/src/com</file>
-          <file>src-repos/10 - Nutch v0.4/src</file>
-          <file>src-repos/11 - PMD/src/net</file-->
+          <file>projects/P-MARt/5 - JUnit v3.7/src/junit</file>
         </fileList>
       </FileList>
     </entry>
     <entry>
       <string>write_code</string>
       <boolean>true</boolean>
+    </entry>
+    <entry>
+      <string>apkPackageFilter</string>
+      <StringList>
+        <stringList/>
+      </StringList>
     </entry>
     <entry>
       <string>log</string>
@@ -129,7 +127,7 @@
     </entry>
     <entry>
       <string>joptions_current_folder_path</string>
-      <java.util.Optional>%XSTREAM_EMPTY_OPTIONAL%</java.util.Optional>
+      <java.util.Optional isPresent="false"/>
     </entry>
     <entry>
       <string>report</string>

@@ -1,0 +1,11 @@
+
+/.archive
+
+/*/.AppleDouble
+/*/.settings
+/*/.uml
+/*/bin
+/*/docs/
+/*/xdocs/
+/*/.project
+*.class

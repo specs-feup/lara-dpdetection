@@ -6,24 +6,39 @@ import lcl.patterns.DetectionAlgorithm;
 import lcl.patterns.DetectionAlgorithmLight;
 import lcl.patterns.grouping.GroupingUtils;
 
-var PRINT_DETAILS = false;
+var PRINT_DETAILS = true;
 var PRINT_RELATIONS = false;
 var ALGORITHM_LIGHT = true;
 var DP_CORE_COMPATIBILITY = true;
-var ALGORITHM_FULL_NAMING = false;
+var ALGORITHM_FULL_NAMING = true;
 
 aspectdef Detection
 
+	/*
+	for(var $class of Query.search("class")) {
+	
+		// if ($class.name != "TestComposite" && $class.name != "Test") continue;
+		
+		var result = Query.searchFrom($class, "call").get();
+		print("Class: " + $class.name);	
+		print("; full name: " + $class._qualifiedName);	
+		println(" : calls: " + result.length);	
+		// println(":: " + result);	
+		// println(" Class: " + $class);		
+		// println("; types: " + Array.from($class.types()));
+	}
+	/* */
+
 	var algorithm = algorithmOf();
 
-	detect(algorithm, "Observer.pattern");
-	detect(algorithm, "Visitor.pattern"); 
-	detect(algorithm, "Command.pattern");
+	detect(algorithm, "Abstract Factory.pattern");
+	// detect(algorithm, "Abstract Factory_v2.pattern");
 	detect(algorithm, "Builder.pattern");
 	detect(algorithm, "Bridge.pattern");
-	detect(algorithm, "Bridge_v2.pattern");
-	detect(algorithm, "Abstract Factory.pattern");
-	detect(algorithm, "Abstract Factory_v2.pattern");
+	// detect(algorithm, "Bridge_v2.pattern");
+	detect(algorithm, "Command.pattern");
+	detect(algorithm, "Observer.pattern");
+	detect(algorithm, "Visitor.pattern"); 
 
 	// 				C++					Java
 	// Observer		5 (4 visitors)	5 3		4 (2 visitors) / 3 3
@@ -47,6 +62,7 @@ function algorithmOf() {
 	algorithm.setCompatibility(DP_CORE_COMPATIBILITY);
 	algorithm.setFullNaming(ALGORITHM_FULL_NAMING);
 	algorithm.parseRelations();
+	if (PRINT_RELATIONS) printRelations(algorithm);
 	return algorithm;
 }
 
@@ -63,18 +79,23 @@ function detect(algorithm, patternFile) {
 	print(" , " + GroupingUtils.findSuperCandidates(pattern, detections).length); 
 	print(" , " + GroupingUtils.findHyperCandidates(pattern, GroupingUtils.findSuperCandidates(pattern, detections)).length); 
 	println();
-	if (PRINT_RELATIONS) printRelations(algorithm);
 	if (PRINT_DETAILS) printDetails(detections);
 }
 
 function printDetails(detections) {
+
+	detections = detections.map(detection => detection.map(d => !d.includes('.') ? d : d.substring(d.lastIndexOf('.') + 1)));
+	detections = detections.map(detection => detection.map(d => !d.includes('$') ? d : d.substring(d.lastIndexOf('$') + 1)));
+		
 	detections.sort((a, b) => {
-		if (a[0] > b[0]) return 1;
-		if (a[0] < b[0]) return -1;
+		for (var i = 0 ; i < a.length && i < b.length ; i++) {
+			if (a[i] > b[i]) return 1;
+			if (a[i] < b[i]) return -1;
+		}
 	  	return 0;
 	});
 	for (var detection of detections) println(" - " + detection);
-	println();
+	// println();
 }
 
 function printRelations(algorithm) {
@@ -82,7 +103,7 @@ function printRelations(algorithm) {
 	println("classTypes = " + algorithm.classTypesMap.size);
 
 	algorithm.classTypesMap.forEach((classTypeObject, classTypeName) => {
-		
+
 		println(classTypeName + " (" + algorithm.abstractionOf(classTypeObject.classType) + ")");
 		println(" - calls      " + classTypeObject.relationCalls);
 		println(" - creates    " + classTypeObject.relationCreates);
