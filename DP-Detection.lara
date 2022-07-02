@@ -3,31 +3,14 @@ import weaver.WeaverOptions;
 import lcl.LaraCommonLanguage;
 import lcl.patterns.PatternsReader;
 import lcl.patterns.DetectionAlgorithm;
-import lcl.patterns.DetectionAlgorithmLight;
 import lcl.patterns.grouping.GroupingUtils;
 
 var PRINT_DETAILS = true;
 var PRINT_RELATIONS = false;
-var ALGORITHM_LIGHT = true;
 var DP_CORE_COMPATIBILITY = true;
 var ALGORITHM_FULL_NAMING = true;
 
 aspectdef Detection
-
-	/*
-	for(var $class of Query.search("class")) {
-	
-		// if ($class.name != "TestComposite" && $class.name != "Test") continue;
-		
-		var result = Query.searchFrom($class, "call").get();
-		print("Class: " + $class.name);	
-		print("; full name: " + $class._qualifiedName);	
-		println(" : calls: " + result.length);	
-		// println(":: " + result);	
-		// println(" Class: " + $class);		
-		// println("; types: " + Array.from($class.types()));
-	}
-	/* */
 
 	var algorithm = algorithmOf();
 
@@ -39,26 +22,12 @@ aspectdef Detection
 	detect(algorithm, "Command.pattern");
 	detect(algorithm, "Observer.pattern");
 	detect(algorithm, "Visitor.pattern"); 
-
-	// 				C++					Java
-	// Observer		5 (4 visitors)	5 3		4 (2 visitors) / 3 3
-	// Visitor		4			4 2		2			/ 1 1
-	// Command		1			1 1		4 (2 builder)	/ 2 2
-	// Builder		1			1 1		2			/ 1 1
-	// Bridge			2			2 1		4			/ 4 2
-	// Abstract Factory	4			4 4		4			/ 2 1
 	
 end
 
 function algorithmOf() {
 
-	if (ALGORITHM_LIGHT) {
-		var algorithm = new DetectionAlgorithmLight([], []);
-	}
-	else {
-		var algorithm = new DetectionAlgorithm([], []);
-	}
-
+	var algorithm = new DetectionAlgorithm([], []);
 	algorithm.setCompatibility(DP_CORE_COMPATIBILITY);
 	algorithm.setFullNaming(ALGORITHM_FULL_NAMING);
 	algorithm.parseRelations();

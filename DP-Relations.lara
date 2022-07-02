@@ -3,10 +3,6 @@ import weaver.Query;
 
 aspectdef Relations
 
-	RelationReferences();
-	
-	if (true) return;
-	
 	testClassJp();
 	testInterfaceJp();
 	
