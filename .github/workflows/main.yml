@@ -35,6 +35,7 @@ jobs:
       # Setup Clava
       - name: Update/install Clava
         run: |
+           cd ..
            mkdir -p clava
            cd clava
            pwd
@@ -47,6 +48,7 @@ jobs:
       # Setup Kadabra
       - name: Update/install Kadabra
         run: |
+          cd ..
           mkdir -p kadabra
           cd kadabra
           pwd
@@ -59,5 +61,5 @@ jobs:
       # Run Clava tests
       - name: Clava tests 
         run: |
-          cd ${{ github.workspace }}
-          ../../clava/clava -c config-grouping.clava
+          # cd ${{ github.workspace }}
+          ../clava/clava -c config-grouping.clava
