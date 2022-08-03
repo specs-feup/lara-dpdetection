@@ -37,6 +37,7 @@ jobs:
         run: |
            mkdir -p clava
            cd clava
+           pwd
            # Delete file before downloading
            rm clava-update -f
            wget specs.fe.up.pt/tools/clava/clava-update
@@ -44,10 +45,11 @@ jobs:
            ./clava-update
 
       # Setup Kadabra
-      - name: Update/install Clava
+      - name: Update/install Kadabra
         run: |
           mkdir -p kadabra
           cd kadabra
+          pwd
           # Delete file before downloading
           rm kadabra.zip -f
           wget specs.fe.up.pt/tools/kadabra.zip
@@ -58,4 +60,4 @@ jobs:
       - name: Clava tests 
         run: |
           cd ${{ github.workspace }}
-          ../clava/clava -c config-grouping.clava
+          ../../clava/clava -c config-grouping.clava
