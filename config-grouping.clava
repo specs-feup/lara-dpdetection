@@ -2,147 +2,43 @@
   <name>LaraI Options</name>
   <values>
     <entry>
-      <string>loc</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
       <string>workspace</string>
       <FileList>
         <fileList/>
       </FileList>
     </entry>
     <entry>
-      <string>Disable Code Generation</string>
-      <boolean>true</boolean>
-    </entry>
-    <entry>
-      <string>log</string>
-      <OptionalFile>
-        <file></file>
-        <used>false</used>
-      </OptionalFile>
-    </entry>
-    <entry>
       <string>library includes</string>
       <FileList>
         <fileList>
-          <file>/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1</file>
-          <file>/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include</file>
-          <file>/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks</file>
-          <file>/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.1.6/include</file>
-          <file>/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include</file>
-          <file>/usr/local/include</file>
+          <file>Applications\Xcode.app\Contents\Developer\Platforms\MacOSX.platform\Developer\SDKs\MacOSX.sdk\usr\include\c++\v1</file>
+          <file>Applications\Xcode.app\Contents\Developer\Platforms\MacOSX.platform\Developer\SDKs\MacOSX.sdk\usr\include</file>
+          <file>Applications\Xcode.app\Contents\Developer\Platforms\MacOSX.platform\Developer\SDKs\MacOSX.sdk\System\Library\Frameworks</file>
+          <file>Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\clang\13.1.6\include</file>
+          <file>Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\include</file>
+          <file>usr\local\include</file>
         </fileList>
       </FileList>
-    </entry>
-    <entry>
-      <string>autoimportjs</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Clean intermediate files</string>
-      <boolean>false</boolean>
     </entry>
     <entry>
       <string>main</string>
       <string></string>
     </entry>
     <entry>
-      <string>systemIncludesThreshold</string>
-      <int>1</int>
-    </entry>
-    <entry>
-      <string>argv</string>
-      <string></string>
-    </entry>
-    <entry>
-      <string>tools</string>
-      <OptionalFile>
-        <file></file>
-        <used>false</used>
-      </OptionalFile>
-    </entry>
-    <entry>
-      <string>jsEngine</string>
-      <pt.up.fe.specs.jsengine.JsEngineType>GRAALVM_COMPAT</pt.up.fe.specs.jsengine.JsEngineType>
-    </entry>
-    <entry>
-      <string>flatOutputFolder</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
       <string>output</string>
       <file>output</file>
-    </entry>
-    <entry>
-      <string>bundle_tags</string>
-      <string></string>
-    </entry>
-    <entry>
-      <string>Compiler Flags</string>
-      <string></string>
-    </entry>
-    <entry>
-      <string>Compiler Flags in list format</string>
-      <StringList>
-        <stringList/>
-      </StringList>
-    </entry>
-    <entry>
-      <string>Check C/CXX Syntax</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>aspect</string>
-      <file>DP-Grouping.lara</file>
     </entry>
     <entry>
       <string>parsingNumThreads</string>
       <int>0</int>
     </entry>
     <entry>
-      <string>ignoreHeaderIncludes</string>
-      <StringList>
-        <stringList/>
-      </StringList>
-    </entry>
-    <entry>
-      <string>cudaPath</string>
-      <string></string>
-    </entry>
-    <entry>
-      <string>stack trace</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
       <string>libcCxxMode</string>
       <pt.up.fe.specs.clang.LibcMode>SYSTEM</pt.up.fe.specs.clang.LibcMode>
     </entry>
     <entry>
-      <string>include</string>
-      <FileList>
-        <fileList/>
-      </FileList>
-    </entry>
-    <entry>
-      <string>debug</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Disable Clava Info</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Copy files in sources</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
       <string>cudaGpuArch</string>
       <string></string>
-    </entry>
-    <entry>
-      <string>Generate CMake Integration Helper Files</string>
-      <boolean>false</boolean>
     </entry>
     <entry>
       <string>parseIncludes</string>
@@ -153,16 +49,12 @@
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>verbose</string>
-      <org.lara.interpreter.joptions.config.interpreter.VerboseLevel>warnings</org.lara.interpreter.joptions.config.interpreter.VerboseLevel>
-    </entry>
-    <entry>
       <string>Disable Remote Dependencies</string>
       <boolean>false</boolean>
     </entry>
     <entry>
       <string>joptions_current_folder_path</string>
-      <java.util.Optional>%XSTREAM_EMPTY_OPTIONAL%</java.util.Optional>
+      <java.util.Optional isPresent="false"/>
     </entry>
     <entry>
       <string>Generate Modified Code Only</string>
@@ -179,19 +71,6 @@
     <entry>
       <string>Weaved code foldername</string>
       <string></string>
-    </entry>
-    <entry>
-      <string>header includes</string>
-      <FileList>
-        <fileList/>
-      </FileList>
-    </entry>
-    <entry>
-      <string>report</string>
-      <OptionalFile>
-        <file></file>
-        <used>false</used>
-      </OptionalFile>
     </entry>
     <entry>
       <string>external_dependencies</string>
@@ -225,6 +104,131 @@
     <entry>
       <string>restrict mode</string>
       <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>loc</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disable Code Generation</string>
+      <boolean>true</boolean>
+    </entry>
+    <entry>
+      <string>log</string>
+      <OptionalFile>
+        <file></file>
+        <used>false</used>
+      </OptionalFile>
+    </entry>
+    <entry>
+      <string>autoimportjs</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Clean intermediate files</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>systemIncludesThreshold</string>
+      <int>1</int>
+    </entry>
+    <entry>
+      <string>argv</string>
+      <string></string>
+    </entry>
+    <entry>
+      <string>tools</string>
+      <OptionalFile>
+        <file></file>
+        <used>false</used>
+      </OptionalFile>
+    </entry>
+    <entry>
+      <string>jsEngine</string>
+      <pt.up.fe.specs.jsengine.JsEngineType>GRAALVM_COMPAT</pt.up.fe.specs.jsengine.JsEngineType>
+    </entry>
+    <entry>
+      <string>flatOutputFolder</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>bundle_tags</string>
+      <string></string>
+    </entry>
+    <entry>
+      <string>customClangAstDumperExe</string>
+      <file></file>
+    </entry>
+    <entry>
+      <string>Compiler Flags</string>
+      <string></string>
+    </entry>
+    <entry>
+      <string>Compiler Flags in list format</string>
+      <StringList>
+        <stringList/>
+      </StringList>
+    </entry>
+    <entry>
+      <string>Check C/CXX Syntax</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>aspect</string>
+      <file>DP-Grouping.lara</file>
+    </entry>
+    <entry>
+      <string>ignoreHeaderIncludes</string>
+      <StringList>
+        <stringList/>
+      </StringList>
+    </entry>
+    <entry>
+      <string>cudaPath</string>
+      <string></string>
+    </entry>
+    <entry>
+      <string>stack trace</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>include</string>
+      <FileList>
+        <fileList/>
+      </FileList>
+    </entry>
+    <entry>
+      <string>debug</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disable Clava Info</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Copy files in sources</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Generate CMake Integration Helper Files</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>verbose</string>
+      <org.lara.interpreter.joptions.config.interpreter.VerboseLevel>warnings</org.lara.interpreter.joptions.config.interpreter.VerboseLevel>
+    </entry>
+    <entry>
+      <string>header includes</string>
+      <FileList>
+        <fileList/>
+      </FileList>
+    </entry>
+    <entry>
+      <string>report</string>
+      <OptionalFile>
+        <file></file>
+        <used>false</used>
+      </OptionalFile>
     </entry>
   </values>
   <strict>false</strict>

@@ -1,0 +1,6 @@
+Observer.pattern => 21 , 10 , 9
+Visitor.pattern => 0 , 0 , 0
+Command.pattern => 4 , 2 , 2
+Builder.pattern => 111 , 60 , 37
+Bridge.pattern => 177 , 92 , 46
+Abstract Factory.pattern => 70 , 45 , 20
