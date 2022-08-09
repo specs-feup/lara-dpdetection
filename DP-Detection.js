@@ -14,14 +14,25 @@ var ALGORITHM_FULL_NAMING = true;
 
 	var algorithm = algorithmOf();
 
-	detect(algorithm, "Abstract Factory.pattern");
+	let result = "";
+
+	result += detect(algorithm, "Abstract Factory.pattern");
 	// detect(algorithm, "Abstract Factory_v2.pattern");
-	detect(algorithm, "Builder.pattern");
-	detect(algorithm, "Bridge.pattern");
+	result += detect(algorithm, "Builder.pattern");
+	result += detect(algorithm, "Bridge.pattern");
 	// detect(algorithm, "Bridge_v2.pattern");
-	detect(algorithm, "Command.pattern");
-	detect(algorithm, "Observer.pattern");
-	detect(algorithm, "Visitor.pattern"); 
+	result += detect(algorithm, "Command.pattern");
+	result += detect(algorithm, "Observer.pattern");
+	result += detect(algorithm, "Visitor.pattern"); 
+
+	// Load exepected output file and compare
+	const configFilename = WeaverOptions.getData().getConfigurationFile().getName();
+	
+	const expectedOutputFile = Io.getPath(WeaverOptions.getData().getContextFolder() + "/expected_outputs/",
+						configFilename + ".txt");
+	Check.strings(result, Io.readFile(expectedOutputFile));	
+
+	
 	
 //end
 
@@ -39,16 +50,20 @@ function detect(algorithm, patternFile) {
 
 	var patternsRootDir = WeaverOptions.getData().getContextFolder() + "/patterns/";
 
-	print(patternFile);
+	let result = "";
+	result += patternFile;
 	
 	var pattern = PatternsReader.readPattern(patternsRootDir + patternFile);
 	var detections = algorithm.detect(pattern.members, pattern.connections);
 	
-	print(" => " + detections.length); 
-	print(" , " + GroupingUtils.findSuperCandidates(pattern, detections).length); 
-	print(" , " + GroupingUtils.findHyperCandidates(pattern, GroupingUtils.findSuperCandidates(pattern, detections)).length); 
-	println();
+	result += " => " + detections.length; 
+	result += " , " + GroupingUtils.findSuperCandidates(pattern, detections).length; 
+	result += " , " + GroupingUtils.findHyperCandidates(pattern, GroupingUtils.findSuperCandidates(pattern, detections)).length; 
+	result += "\n";
+	print(result);
 	if (PRINT_DETAILS) printDetails(detections);
+
+	return result;
 }
 
 function printDetails(detections) {
