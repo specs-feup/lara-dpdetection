@@ -118,7 +118,7 @@
     <entry>
       <string>log</string>
       <OptionalFile>
-        <file>relations-clava.txt</file>
+        <file>relations.txt</file>
         <used>true</used>
       </OptionalFile>
     </entry>

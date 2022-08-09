@@ -9,7 +9,7 @@
       <string>workspace</string>
       <FileList>
         <fileList>
-          <file>projects/test-project</file>
+          <file>projects\test-project</file>
         </fileList>
       </FileList>
     </entry>
@@ -18,10 +18,16 @@
       <boolean>true</boolean>
     </entry>
     <entry>
+      <string>apkPackageFilter</string>
+      <StringList>
+        <stringList/>
+      </StringList>
+    </entry>
+    <entry>
       <string>log</string>
       <OptionalFile>
-        <file></file>
-        <used>false</used>
+        <file>relations.txt</file>
+        <used>true</used>
       </OptionalFile>
     </entry>
     <entry>
@@ -71,7 +77,7 @@
     </entry>
     <entry>
       <string>aspect</string>
-      <file>DP-Relations.lara</file>
+      <file>DP-Relations.js</file>
     </entry>
     <entry>
       <string>stack trace</string>
@@ -109,7 +115,7 @@
     </entry>
     <entry>
       <string>javascript</string>
-      <boolean>false</boolean>
+      <boolean>true</boolean>
     </entry>
     <entry>
       <string>clear_output</string>
@@ -121,7 +127,7 @@
     </entry>
     <entry>
       <string>joptions_current_folder_path</string>
-      <java.util.Optional>%XSTREAM_EMPTY_OPTIONAL%</java.util.Optional>
+      <java.util.Optional isPresent="false"/>
     </entry>
     <entry>
       <string>report</string>

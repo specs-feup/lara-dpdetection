@@ -1,5 +1,6 @@
 laraImport("lcl.LaraCommonLanguage");
 laraImport("weaver.Query");
+laraImport("weaver.WeaverOptions");
 
 //aspectdef Relations
 
@@ -16,7 +17,7 @@ laraImport("weaver.Query");
 	// Load exepected output file and compare
 	const expectedOutputFile = Io.getPath(WeaverOptions.getData().getContextFolder() + "/expected_outputs/",
 						"relations-" + Weaver.getName() + ".txt");
-	const actualOutputFile = Io.getPath(WeaverOptions.getData().getContextFolder() + "/relations-clava.txt");
+	const actualOutputFile = Io.getPath(WeaverOptions.getData().getContextFolder() + "/relations.txt");
 	Check.strings(Io.readFile(actualOutputFile), Io.readFile(expectedOutputFile));	
 //end
 

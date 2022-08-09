@@ -1,0 +1,181 @@
+5
+
+Class MyTopic
+     (i) Subject
+ (all i) Subject
+     (m) getUpdate,notifyObservers,postMessage,register,unregister
+ (all m) MyTopic,getUpdate,notifyObservers,postMessage,register,unregister
+(list m) getUpdate,notifyObservers,postMessage,register,unregister,getUpdate,notifyObservers,register,unregister
+
+Class MyTopicSubscriber
+     (i) Observer
+ (all i) Observer
+     (m) setSubject,update
+ (all m) MyTopicSubscriber,setSubject,update
+(list m) setSubject,update,setSubject,update
+
+Class ObserverPatternTest
+     (m) main
+ (all m) ObserverPatternTest,main
+(list m) main
+
+Class TestClassInheritance
+    (sp) MyTopic
+(all sp) MyTopic
+ (all i) Subject
+     (m) anotherMethod
+ (all m) TestClassInheritance,anotherMethod
+(list m) anotherMethod,getUpdate,notifyObservers,register,unregister,getUpdate,notifyObservers,postMessage,register,unregister
+
+Class TestClassInheritanceOverride
+    (sp) TestClassInheritance
+(all sp) TestClassInheritance,MyTopic
+ (all i) Subject
+     (m) anotherMethod,anotherMethod
+ (all m) TestClassInheritanceOverride,anotherMethod,anotherMethod
+(list m) anotherMethod,anotherMethod,getUpdate,notifyObservers,register,unregister,anotherMethod,getUpdate,notifyObservers,postMessage,register,unregister
+4
+
+Interface Observer
+    (m) - setSubject,update
+(all m) - setSubject,update
+
+Interface Subject
+    (m) - getUpdate,notifyObservers,register,unregister
+(all m) - getUpdate,notifyObservers,register,unregister
+
+Interface TestMultipleInterfaces
+    (i) - Subject,Observer
+(all i) - Subject,Observer
+    (m) - multipleMethod
+(all m) - multipleMethod,getUpdate,notifyObservers,register,unregister,setSubject,update
+
+Interface TestSuperInterfaces
+    (i) - TestMultipleInterfaces
+(all i) - TestMultipleInterfaces,Subject,Observer
+    (m) - superMethod
+(all m) - superMethod,multipleMethod,getUpdate,notifyObservers,register,unregister,setSubject,update
+
+Class MyTopic
+Class 'MyTopic' calls 'Object' of 'Object'
+Class 'MyTopic' calls 'ArrayList' of 'ArrayList'
+Class 'MyTopic' calls 'NullPointerException' of 'NullPointerException'
+Class 'MyTopic' calls 'contains' of 'List'
+Class 'MyTopic' calls 'add' of 'List'
+Class 'MyTopic' calls 'remove' of 'List'
+Class 'MyTopic' calls 'ArrayList' of 'ArrayList'
+Class 'MyTopic' calls 'update' of 'Observer'
+Class 'MyTopic' calls 'println' of 'PrintStream'
+Class 'MyTopic' calls 'notifyObservers' of 'MyTopic'
+
+Class MyTopicSubscriber
+Class 'MyTopicSubscriber' calls 'getUpdate' of 'Subject'
+Class 'MyTopicSubscriber' calls 'println' of 'PrintStream'
+Class 'MyTopicSubscriber' calls 'println' of 'PrintStream'
+
+Class ObserverPatternTest
+Class 'ObserverPatternTest' calls 'MyTopic' of 'MyTopic'
+Class 'ObserverPatternTest' calls 'MyTopicSubscriber' of 'MyTopicSubscriber'
+Class 'ObserverPatternTest' calls 'MyTopicSubscriber' of 'MyTopicSubscriber'
+Class 'ObserverPatternTest' calls 'MyTopicSubscriber' of 'MyTopicSubscriber'
+Class 'ObserverPatternTest' calls 'register' of 'MyTopic'
+Class 'ObserverPatternTest' calls 'register' of 'MyTopic'
+Class 'ObserverPatternTest' calls 'register' of 'MyTopic'
+Class 'ObserverPatternTest' calls 'setSubject' of 'Observer'
+Class 'ObserverPatternTest' calls 'setSubject' of 'Observer'
+Class 'ObserverPatternTest' calls 'setSubject' of 'Observer'
+Class 'ObserverPatternTest' calls 'update' of 'Observer'
+Class 'ObserverPatternTest' calls 'postMessage' of 'MyTopic'
+
+Class TestClassInheritance
+
+Class TestClassInheritanceOverride
+
+Class 'MyTopic' creates 'Object'
+Class 'MyTopic' creates 'ArrayList'
+Class 'MyTopic' creates 'NullPointerException'
+Class 'MyTopic' creates 'ArrayList'
+
+
+Class 'ObserverPatternTest' creates 'MyTopic'
+Class 'ObserverPatternTest' creates 'MyTopicSubscriber'
+Class 'ObserverPatternTest' creates 'MyTopicSubscriber'
+Class 'ObserverPatternTest' creates 'MyTopicSubscriber'
+
+
+
+Class MyTopic (observers,message,changed,MUTEX)
+Class 'MyTopic' has 'List'
+Class 'MyTopic' has 'String'
+Class 'MyTopic' has 'Object'
+
+Class MyTopicSubscriber (name,topic)
+Class 'MyTopicSubscriber' has 'String'
+Class 'MyTopicSubscriber' has 'Subject'
+
+Class ObserverPatternTest ()
+
+Class TestClassInheritance ()
+
+Class TestClassInheritanceOverride ()
+Class 'MyTopic' inherits from '(i)Subject'
+Class 'MyTopicSubscriber' inherits from '(i)Observer'
+Class 'TestClassInheritance' inherits from '(c)MyTopic,(i)Subject'
+Class 'TestClassInheritanceOverride' inherits from '(c)TestClassInheritance,(c)MyTopic,(i)Subject'
+
+Class MyTopic => MyTopic,getUpdate,notifyObservers,postMessage,register,unregister
+Class 'MyTopic' references 'Observer'
+Class 'MyTopic' references 'String'
+Class 'MyTopic' references 'Observer'
+Class 'MyTopic' references 'Observer'
+
+Class MyTopicSubscriber => MyTopicSubscriber,setSubject,update
+Class 'MyTopicSubscriber' references 'Subject'
+
+Class Observer => setSubject,update
+Class 'Observer' references 'Subject'
+
+Class ObserverPatternTest => ObserverPatternTest,main
+
+Class Subject => getUpdate,notifyObservers,register,unregister
+Class 'Subject' references 'Observer'
+Class 'Subject' references 'Observer'
+Class 'Subject' references 'Observer'
+
+Class TestClassInheritance => TestClassInheritance,anotherMethod
+
+Class TestClassInheritanceOverride => TestClassInheritanceOverride,anotherMethod,anotherMethod
+
+Class TestMultipleInterfaces => multipleMethod,getUpdate,notifyObservers,register,unregister,setSubject,update
+Class 'TestMultipleInterfaces' references 'Observer'
+Class 'TestMultipleInterfaces' references 'Observer'
+Class 'TestMultipleInterfaces' references 'Observer'
+Class 'TestMultipleInterfaces' references 'Subject'
+
+Class TestSuperInterfaces => superMethod,multipleMethod,getUpdate,notifyObservers,register,unregister,setSubject,update
+Class 'TestSuperInterfaces' references 'Observer'
+Class 'TestSuperInterfaces' references 'Observer'
+Class 'TestSuperInterfaces' references 'Observer'
+Class 'TestSuperInterfaces' references 'Subject'
+
+Class MyTopic => MyTopic,getUpdate,notifyObservers,postMessage,register,unregister
+Class 'MyTopic' uses 'Object'
+
+Class MyTopicSubscriber => MyTopicSubscriber,setSubject,update
+
+Class Observer => setSubject,update
+
+Class ObserverPatternTest => ObserverPatternTest,main
+
+Class Subject => getUpdate,notifyObservers,register,unregister
+Class 'Subject' uses 'Object'
+
+Class TestClassInheritance => TestClassInheritance,anotherMethod
+
+Class TestClassInheritanceOverride => TestClassInheritanceOverride,anotherMethod,anotherMethod
+
+Class TestMultipleInterfaces => multipleMethod,getUpdate,notifyObservers,register,unregister,setSubject,update
+Class 'TestMultipleInterfaces' uses 'Object'
+
+Class TestSuperInterfaces => superMethod,multipleMethod,getUpdate,notifyObservers,register,unregister,setSubject,update
+Class 'TestSuperInterfaces' uses 'Object'
