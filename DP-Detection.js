@@ -1,16 +1,16 @@
 
-import weaver.WeaverOptions;
-import lcl.LaraCommonLanguage;
-import lcl.patterns.PatternsReader;
-import lcl.patterns.DetectionAlgorithm;
-import lcl.patterns.grouping.GroupingUtils;
+laraImport("weaver.WeaverOptions");
+laraImport("lcl.LaraCommonLanguage");
+laraImport("lcl.patterns.PatternsReader");
+laraImport("lcl.patterns.DetectionAlgorithm");
+laraImport("lcl.patterns.grouping.GroupingUtils");
 
 var PRINT_DETAILS = true;
 var PRINT_RELATIONS = false;
 var DP_CORE_COMPATIBILITY = true;
 var ALGORITHM_FULL_NAMING = true;
 
-aspectdef Detection
+//aspectdef Detection
 
 	var algorithm = algorithmOf();
 
@@ -23,7 +23,7 @@ aspectdef Detection
 	detect(algorithm, "Observer.pattern");
 	detect(algorithm, "Visitor.pattern"); 
 	
-end
+//end
 
 function algorithmOf() {
 

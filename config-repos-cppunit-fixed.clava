@@ -5,7 +5,7 @@
       <string>workspace</string>
       <FileList>
         <fileList>
-          <file>projects/Cpp_J-Unit/cppunit_fixed/src</file>
+          <file>projects\Cpp_J-Unit\cppunit_fixed\src</file>
         </fileList>
       </FileList>
     </entry>
@@ -13,12 +13,12 @@
       <string>library includes</string>
       <FileList>
         <fileList>
-          <file>/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1</file>
-          <file>/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include</file>
-          <file>/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks</file>
-          <file>/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.1.6/include</file>
-          <file>/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include</file>
-          <file>/usr/local/include</file>
+          <file>Applications\Xcode.app\Contents\Developer\Platforms\MacOSX.platform\Developer\SDKs\MacOSX.sdk\usr\include\c++\v1</file>
+          <file>Applications\Xcode.app\Contents\Developer\Platforms\MacOSX.platform\Developer\SDKs\MacOSX.sdk\usr\include</file>
+          <file>Applications\Xcode.app\Contents\Developer\Platforms\MacOSX.platform\Developer\SDKs\MacOSX.sdk\System\Library\Frameworks</file>
+          <file>Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\clang\13.1.6\include</file>
+          <file>Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\include</file>
+          <file>usr\local\include</file>
         </fileList>
       </FileList>
     </entry>
@@ -68,7 +68,7 @@
     </entry>
     <entry>
       <string>continueOnParsingErrors</string>
-      <boolean>false</boolean>
+      <boolean>true</boolean>
     </entry>
     <entry>
       <string>Weaved code foldername</string>
@@ -177,7 +177,7 @@
     </entry>
     <entry>
       <string>aspect</string>
-      <file>DP-Detection.lara</file>
+      <file>DP-Detection.js</file>
     </entry>
     <entry>
       <string>ignoreHeaderIncludes</string>
@@ -223,7 +223,7 @@
       <string>header includes</string>
       <FileList>
         <fileList>
-          <file>projects/Cpp_J-Unit/cppunit_fixed/include</file>
+          <file>projects\Cpp_J-Unit\cppunit_fixed\include</file>
         </fileList>
       </FileList>
     </entry>
