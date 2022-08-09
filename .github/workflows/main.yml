@@ -41,7 +41,7 @@ jobs:
            pwd
            # Delete file before downloading
            rm clava-update -f
-           wget specs.fe.up.pt/tools/clava/clava-update
+           wget specs.fe.up.pt/tools/clava/clava-update -nv
            chmod +x clava-update
            ./clava-update
 
@@ -54,8 +54,8 @@ jobs:
           pwd
           # Delete file before downloading
           rm kadabra.zip -f
-          wget specs.fe.up.pt/tools/kadabra.zip
-          unzip -o kadabra.zip
+          wget specs.fe.up.pt/tools/kadabra.zip -nv
+          unzip -o kadabra.zip -q
 
 
       # Run Clava tests
