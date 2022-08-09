@@ -175,7 +175,7 @@
     </entry>
     <entry>
       <string>aspect</string>
-      <file>DP-Grouping.lara</file>
+      <file>DP-Grouping.js</file>
     </entry>
     <entry>
       <string>ignoreHeaderIncludes</string>

@@ -1,58 +1,13 @@
 
-import weaver.WeaverOptions;
-import lcl.LaraCommonLanguage;
-import lcl.patterns.PatternsReader;
-import lcl.patterns.grouping.GroupingUtils;
-import lara.Check;
-import lara.Io;
-import weaver.Weaver;
+laraImport("weaver.WeaverOptions");
+laraImport("lcl.LaraCommonLanguage");
+laraImport("lcl.patterns.PatternsReader");
+laraImport("lcl.patterns.grouping.GroupingUtils");
+laraImport("lara.Check");
+laraImport("lara.Io");
+laraImport("weaver.Weaver");
 
 var _ACTUAL_OUTPUT = "";
-
-aspectdef Grouping
-
-	// Initialize test string
-	_ACTUAL_OUTPUT = "";
-
-	printify(ObserverResults,		"Observer.pattern");
-	printify(VisitorResults,			"Visitor.pattern");
-	printify(CommandResults,			"Command.pattern");
-	printify(BuilderResults,			"Builder.pattern");
-	printify(BridgeResults,			"Bridge.pattern");
-	printify(AbstractFactoryResults,	"Abstract Factory.pattern");
-
-	// Observer			21	10	9
-	// Visitor			0	0	0
-	// Command			4	2	2
-	// Builder			111	60	37
-	// Bridge				177	92	46
-	// Abstract Factory		70	45	20
-
-	// Test output
-	var expectedOutputFile = Io.getPath(WeaverOptions.getData().getContextFolder() + "/expected_outputs/",
-								 "grouping-" + Weaver.getName() + ".txt");
-	Check.strings(_ACTUAL_OUTPUT, Io.readFile(expectedOutputFile));
-	
-end
-
-function printify(detections, patternFilename) {
-
-	var patternsRootDir = WeaverOptions.getData().getContextFolder() + "/patterns/";
-	var pattern = PatternsReader.readPattern(patternsRootDir + patternFilename);
-
-	var result = patternFilename;
-	result += " => " + detections.length;
-	result += " , " + GroupingUtils.findSuperCandidates(pattern, detections).length;
-	result += " , " + GroupingUtils.findHyperCandidates(pattern, GroupingUtils.findSuperCandidates(pattern, detections)).length;
-	println(result);
-	_ACTUAL_OUTPUT += result + "\n";
-
-//	print(patternFilename);
-//	print(" => " + detections.length); 
-//	print(" , " + GroupingUtils.findSuperCandidates(pattern, detections).length); 
-//	print(" , " + GroupingUtils.findHyperCandidates(pattern, GroupingUtils.findSuperCandidates(pattern, detections)).length); 
-//	println();
-}
 
 var ObserverResults = [
 	["TextAreaFigure","FigureChangeListener","Figure"],
@@ -448,5 +403,52 @@ var AbstractFactoryResults = [
 	["LocatorHandle","AbstractHandle","AWTCursor","Cursor"],
 	["GroupFigure","CompositeFigure","HandleEnumerator","HandleEnumeration"],
 	["GroupFigure","CompositeFigure","FigureEnumerator","FigureEnumeration"]];
+
+
+
+//aspectdef Grouping
+
+	// Initialize test string
+	_ACTUAL_OUTPUT = "";
+
+	printify(ObserverResults,		"Observer.pattern");
+	printify(VisitorResults,			"Visitor.pattern");
+	printify(CommandResults,			"Command.pattern");
+	printify(BuilderResults,			"Builder.pattern");
+	printify(BridgeResults,			"Bridge.pattern");
+	printify(AbstractFactoryResults,	"Abstract Factory.pattern");
+
+	// Observer			21	10	9
+	// Visitor			0	0	0
+	// Command			4	2	2
+	// Builder			111	60	37
+	// Bridge				177	92	46
+	// Abstract Factory		70	45	20
+
+	// Test output
+	var expectedOutputFile = Io.getPath(WeaverOptions.getData().getContextFolder() + "/expected_outputs/",
+								 "grouping-" + Weaver.getName() + ".txt");
+	Check.strings(_ACTUAL_OUTPUT, Io.readFile(expectedOutputFile));
+	
+//end
+
+function printify(detections, patternFilename) {
+
+	var patternsRootDir = WeaverOptions.getData().getContextFolder() + "/patterns/";
+	var pattern = PatternsReader.readPattern(patternsRootDir + patternFilename);
+
+	var result = patternFilename;
+	result += " => " + detections.length;
+	result += " , " + GroupingUtils.findSuperCandidates(pattern, detections).length;
+	result += " , " + GroupingUtils.findHyperCandidates(pattern, GroupingUtils.findSuperCandidates(pattern, detections)).length;
+	println(result);
+	_ACTUAL_OUTPUT += result + "\n";
+
+//	print(patternFilename);
+//	print(" => " + detections.length); 
+//	print(" , " + GroupingUtils.findSuperCandidates(pattern, detections).length); 
+//	print(" , " + GroupingUtils.findHyperCandidates(pattern, GroupingUtils.findSuperCandidates(pattern, detections)).length); 
+//	println();
+}
 
 
