@@ -55,7 +55,7 @@ jobs:
           # Delete file before downloading
           rm kadabra.zip -f
           wget specs.fe.up.pt/tools/kadabra.zip -nv
-          unzip -o kadabra.zip -q
+          unzip -q -o kadabra.zip
 
 
       # Run Clava tests
