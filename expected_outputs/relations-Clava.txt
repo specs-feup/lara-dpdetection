@@ -1,0 +1,515 @@
+23
+
+Class ConcreteProductA1
+     (i) AbstractProductA
+ (all i) AbstractProductA
+     (m) UsefulFunctionA
+ (all m) UsefulFunctionA
+(list m) UsefulFunctionA,~AbstractProductA,UsefulFunctionA
+
+Class ConcreteProductA2
+     (i) AbstractProductA
+ (all i) AbstractProductA
+     (m) UsefulFunctionA
+ (all m) UsefulFunctionA
+(list m) UsefulFunctionA,~AbstractProductA,UsefulFunctionA
+
+Class ConcreteProductB1
+     (i) AbstractProductB
+ (all i) AbstractProductB
+     (m) UsefulFunctionB,AnotherUsefulFunctionB
+ (all m) UsefulFunctionB,AnotherUsefulFunctionB
+(list m) UsefulFunctionB,AnotherUsefulFunctionB,~AbstractProductB,UsefulFunctionB,AnotherUsefulFunctionB
+
+Class ConcreteProductB2
+     (i) AbstractProductB
+ (all i) AbstractProductB
+     (m) UsefulFunctionB,AnotherUsefulFunctionB
+ (all m) UsefulFunctionB,AnotherUsefulFunctionB
+(list m) UsefulFunctionB,AnotherUsefulFunctionB,~AbstractProductB,UsefulFunctionB,AnotherUsefulFunctionB
+
+Class ConcreteFactory1
+     (i) AbstractFactory
+ (all i) AbstractFactory
+     (m) CreateProductA,CreateProductB
+ (all m) CreateProductA,CreateProductB
+(list m) CreateProductA,CreateProductB,CreateProductA,CreateProductB
+
+Class ConcreteFactory2
+     (i) AbstractFactory
+ (all i) AbstractFactory
+     (m) CreateProductA,CreateProductB
+ (all m) CreateProductA,CreateProductB
+(list m) CreateProductA,CreateProductB,CreateProductA,CreateProductB
+
+Class ConcreteImplementationA
+     (i) Implementation
+ (all i) Implementation
+     (m) OperationImplementation
+ (all m) OperationImplementation
+(list m) OperationImplementation,~Implementation,OperationImplementation
+
+Class ConcreteImplementationB
+     (i) Implementation
+ (all i) Implementation
+     (m) OperationImplementation
+ (all m) OperationImplementation
+(list m) OperationImplementation,~Implementation,OperationImplementation
+
+Class Abstraction
+     (m) ~Abstraction,Operation
+ (all m) Abstraction,~Abstraction,Operation
+(list m) ~Abstraction,Operation
+
+Class ExtendedAbstraction
+    (sp) Abstraction
+(all sp) Abstraction
+     (m) Operation
+ (all m) ExtendedAbstraction,Operation
+(list m) Operation,~Abstraction,Operation
+
+Class Product1
+     (m) ListParts
+ (all m) ListParts
+(list m) ListParts
+
+Class ConcreteBuilder1
+     (i) Builder
+ (all i) Builder
+     (m) ~ConcreteBuilder1,Reset,ProducePartA,ProducePartB,ProducePartC,GetProduct
+ (all m) ConcreteBuilder1,~ConcreteBuilder1,Reset,ProducePartA,ProducePartB,ProducePartC,GetProduct
+(list m) ~ConcreteBuilder1,Reset,ProducePartA,ProducePartB,ProducePartC,GetProduct,~Builder,ProducePartA,ProducePartB,ProducePartC
+
+Class Director
+     (m) set_builder,BuildMinimalViableProduct,BuildFullFeaturedProduct
+ (all m) set_builder,BuildMinimalViableProduct,BuildFullFeaturedProduct
+(list m) set_builder,BuildMinimalViableProduct,BuildFullFeaturedProduct
+
+Class SimpleCommand
+     (i) Command
+ (all i) Command
+     (m) Execute
+ (all m) SimpleCommand,Execute
+(list m) Execute,~Command,Execute
+
+Class Receiver
+     (m) DoSomething,DoSomethingElse
+ (all m) DoSomething,DoSomethingElse
+(list m) DoSomething,DoSomethingElse
+
+Class ComplexCommand
+     (i) Command
+ (all i) Command
+     (m) Execute
+ (all m) ComplexCommand,Execute
+(list m) Execute,~Command,Execute
+
+Class Invoker
+     (m) ~Invoker,SetOnStart,SetOnFinish,DoSomethingImportant
+ (all m) ~Invoker,SetOnStart,SetOnFinish,DoSomethingImportant
+(list m) ~Invoker,SetOnStart,SetOnFinish,DoSomethingImportant
+
+Class Subject
+     (i) ISubject
+ (all i) ISubject
+     (m) ~Subject,Attach,Detach,Notify,CreateMessage,HowManyObserver,SomeBusinessLogic
+ (all m) ~Subject,Attach,Detach,Notify,CreateMessage,HowManyObserver,SomeBusinessLogic
+(list m) ~Subject,Attach,Detach,Notify,CreateMessage,HowManyObserver,SomeBusinessLogic,~ISubject,Attach,Detach,Notify
+
+Class Observer
+     (i) IObserver
+ (all i) IObserver
+     (m) ~Observer,Update,RemoveMeFromTheList,PrintInfo
+ (all m) Observer,~Observer,Update,RemoveMeFromTheList,PrintInfo
+(list m) ~Observer,Update,RemoveMeFromTheList,PrintInfo,~IObserver,Update
+
+Class ConcreteComponentA
+     (i) Component
+ (all i) Component
+     (m) Accept,ExclusiveMethodOfConcreteComponentA
+ (all m) Accept,ExclusiveMethodOfConcreteComponentA
+(list m) Accept,ExclusiveMethodOfConcreteComponentA,~Component,Accept
+
+Class ConcreteComponentB
+     (i) Component
+ (all i) Component
+     (m) Accept,SpecialMethodOfConcreteComponentB
+ (all m) Accept,SpecialMethodOfConcreteComponentB
+(list m) Accept,SpecialMethodOfConcreteComponentB,~Component,Accept
+
+Class ConcreteVisitor1
+     (i) Visitor
+ (all i) Visitor
+     (m) VisitConcreteComponentA,VisitConcreteComponentB
+ (all m) VisitConcreteComponentA,VisitConcreteComponentB
+(list m) VisitConcreteComponentA,VisitConcreteComponentB,VisitConcreteComponentA,VisitConcreteComponentB
+
+Class ConcreteVisitor2
+     (i) Visitor
+ (all i) Visitor
+     (m) VisitConcreteComponentA,VisitConcreteComponentB
+ (all m) VisitConcreteComponentA,VisitConcreteComponentB
+(list m) VisitConcreteComponentA,VisitConcreteComponentB,VisitConcreteComponentA,VisitConcreteComponentB
+10
+
+Interface AbstractProductA
+    (m) - ~AbstractProductA,UsefulFunctionA
+(all m) - ~AbstractProductA,UsefulFunctionA
+
+Interface AbstractProductB
+    (m) - ~AbstractProductB,UsefulFunctionB,AnotherUsefulFunctionB
+(all m) - ~AbstractProductB,UsefulFunctionB,AnotherUsefulFunctionB
+
+Interface AbstractFactory
+    (m) - CreateProductA,CreateProductB
+(all m) - CreateProductA,CreateProductB
+
+Interface Implementation
+    (m) - ~Implementation,OperationImplementation
+(all m) - ~Implementation,OperationImplementation
+
+Interface Builder
+    (m) - ~Builder,ProducePartA,ProducePartB,ProducePartC
+(all m) - ~Builder,ProducePartA,ProducePartB,ProducePartC
+
+Interface Command
+    (m) - ~Command,Execute
+(all m) - ~Command,Execute
+
+Interface IObserver
+    (m) - ~IObserver,Update
+(all m) - ~IObserver,Update
+
+Interface ISubject
+    (m) - ~ISubject,Attach,Detach,Notify
+(all m) - ~ISubject,Attach,Detach,Notify
+
+Interface Visitor
+    (m) - VisitConcreteComponentA,VisitConcreteComponentB
+(all m) - VisitConcreteComponentA,VisitConcreteComponentB
+
+Interface Component
+    (m) - ~Component,Accept
+(all m) - ~Component,Accept
+
+Class ConcreteProductA1
+
+Class ConcreteProductA2
+
+Class ConcreteProductB1
+
+Class ConcreteProductB2
+
+Class ConcreteFactory1
+Class 'ConcreteFactory1' calls 'ConcreteProductA1' of 'ConcreteProductA1'
+Class 'ConcreteFactory1' calls 'ConcreteProductB1' of 'ConcreteProductB1'
+
+Class ConcreteFactory2
+Class 'ConcreteFactory2' calls 'ConcreteProductA2' of 'ConcreteProductA2'
+Class 'ConcreteFactory2' calls 'ConcreteProductB2' of 'ConcreteProductB2'
+
+Class ConcreteImplementationA
+
+Class ConcreteImplementationB
+
+Class Abstraction
+
+Class ExtendedAbstraction
+
+Class Product1
+
+Class ConcreteBuilder1
+Class 'ConcreteBuilder1' calls 'Reset' of 'ConcreteBuilder1'
+Class 'ConcreteBuilder1' calls 'Product1' of 'Product1'
+Class 'ConcreteBuilder1' calls 'Reset' of 'ConcreteBuilder1'
+
+Class Director
+Class 'Director' calls 'ProducePartA' of 'Builder'
+Class 'Director' calls 'ProducePartA' of 'Builder'
+Class 'Director' calls 'ProducePartB' of 'Builder'
+Class 'Director' calls 'ProducePartC' of 'Builder'
+
+Class SimpleCommand
+
+Class Receiver
+
+Class ComplexCommand
+
+Class Invoker
+Class 'Invoker' calls 'Execute' of 'Command'
+Class 'Invoker' calls 'Execute' of 'Command'
+
+Class Subject
+Class 'Subject' calls 'HowManyObserver' of 'Subject'
+Class 'Subject' calls 'Notify' of 'Subject'
+Class 'Subject' calls 'Notify' of 'Subject'
+
+Class Observer
+Class 'Observer' calls 'PrintInfo' of 'Observer'
+
+Class ConcreteComponentA
+Class 'ConcreteComponentA' calls 'VisitConcreteComponentA' of 'Visitor'
+
+Class ConcreteComponentB
+Class 'ConcreteComponentB' calls 'VisitConcreteComponentB' of 'Visitor'
+
+Class ConcreteVisitor1
+
+Class ConcreteVisitor2
+
+
+
+
+
+Class 'ConcreteFactory1' creates 'ConcreteProductA1'
+Class 'ConcreteFactory1' creates 'ConcreteProductB1'
+
+Class 'ConcreteFactory2' creates 'ConcreteProductA2'
+Class 'ConcreteFactory2' creates 'ConcreteProductB2'
+
+
+
+
+
+
+Class 'ConcreteBuilder1' creates 'Product1'
+
+
+
+
+
+
+
+
+
+
+
+
+Class ConcreteProductA1 ()
+
+Class ConcreteProductA2 ()
+
+Class ConcreteProductB1 ()
+
+Class ConcreteProductB2 ()
+
+Class ConcreteFactory1 ()
+
+Class ConcreteFactory2 ()
+
+Class ConcreteImplementationA ()
+
+Class ConcreteImplementationB ()
+
+Class Abstraction (implementation_)
+Class 'Abstraction' has 'Implementation'
+
+Class ExtendedAbstraction ()
+
+Class Product1 (parts_)
+
+Class ConcreteBuilder1 (product)
+Class 'ConcreteBuilder1' has 'Product1'
+
+Class Director (builder)
+Class 'Director' has 'Builder'
+
+Class SimpleCommand (pay_load_)
+
+Class Receiver ()
+
+Class ComplexCommand (receiver_,a_,b_)
+Class 'ComplexCommand' has 'Receiver'
+
+Class Invoker (on_start_,on_finish_)
+Class 'Invoker' has 'Command'
+Class 'Invoker' has 'Command'
+
+Class Subject (list_observer_,message_)
+
+Class Observer (message_from_subject_,subject_,number_)
+Class 'Observer' has 'Subject'
+
+Class ConcreteComponentA ()
+
+Class ConcreteComponentB ()
+
+Class ConcreteVisitor1 ()
+
+Class ConcreteVisitor2 ()
+Class 'ConcreteProductA1' inherits from '(i)AbstractProductA'
+Class 'ConcreteProductA2' inherits from '(i)AbstractProductA'
+Class 'ConcreteProductB1' inherits from '(i)AbstractProductB'
+Class 'ConcreteProductB2' inherits from '(i)AbstractProductB'
+Class 'ConcreteFactory1' inherits from '(i)AbstractFactory'
+Class 'ConcreteFactory2' inherits from '(i)AbstractFactory'
+Class 'ConcreteImplementationA' inherits from '(i)Implementation'
+Class 'ConcreteImplementationB' inherits from '(i)Implementation'
+Class 'ExtendedAbstraction' inherits from '(c)Abstraction'
+Class 'ConcreteBuilder1' inherits from '(i)Builder'
+Class 'SimpleCommand' inherits from '(i)Command'
+Class 'ComplexCommand' inherits from '(i)Command'
+Class 'Subject' inherits from '(i)ISubject'
+Class 'Observer' inherits from '(i)IObserver'
+Class 'ConcreteComponentA' inherits from '(i)Component'
+Class 'ConcreteComponentB' inherits from '(i)Component'
+Class 'ConcreteVisitor1' inherits from '(i)Visitor'
+Class 'ConcreteVisitor2' inherits from '(i)Visitor'
+
+Class AbstractProductA => ~AbstractProductA,UsefulFunctionA
+
+Class ConcreteProductA1 => UsefulFunctionA
+
+Class ConcreteProductA2 => UsefulFunctionA
+
+Class AbstractProductB => ~AbstractProductB,UsefulFunctionB,AnotherUsefulFunctionB
+Class 'AbstractProductB' references 'AbstractProductA'
+
+Class ConcreteProductB1 => UsefulFunctionB,AnotherUsefulFunctionB
+Class 'ConcreteProductB1' references 'AbstractProductA'
+
+Class ConcreteProductB2 => UsefulFunctionB,AnotherUsefulFunctionB
+Class 'ConcreteProductB2' references 'AbstractProductA'
+
+Class AbstractFactory => CreateProductA,CreateProductB
+
+Class ConcreteFactory1 => CreateProductA,CreateProductB
+
+Class ConcreteFactory2 => CreateProductA,CreateProductB
+
+Class Implementation => ~Implementation,OperationImplementation
+
+Class ConcreteImplementationA => OperationImplementation
+
+Class ConcreteImplementationB => OperationImplementation
+
+Class Abstraction => Abstraction,~Abstraction,Operation
+
+Class ExtendedAbstraction => ExtendedAbstraction,Operation
+
+Class Product1 => ListParts
+
+Class Builder => ~Builder,ProducePartA,ProducePartB,ProducePartC
+
+Class ConcreteBuilder1 => ConcreteBuilder1,~ConcreteBuilder1,Reset,ProducePartA,ProducePartB,ProducePartC,GetProduct
+
+Class Director => set_builder,BuildMinimalViableProduct,BuildFullFeaturedProduct
+Class 'Director' references 'Builder'
+
+Class Command => ~Command,Execute
+
+Class SimpleCommand => SimpleCommand,Execute
+
+Class Receiver => DoSomething,DoSomethingElse
+
+Class ComplexCommand => ComplexCommand,Execute
+
+Class Invoker => ~Invoker,SetOnStart,SetOnFinish,DoSomethingImportant
+Class 'Invoker' references 'Command'
+Class 'Invoker' references 'Command'
+
+Class IObserver => ~IObserver,Update
+
+Class ISubject => ~ISubject,Attach,Detach,Notify
+Class 'ISubject' references 'IObserver'
+Class 'ISubject' references 'IObserver'
+
+Class Subject => ~Subject,Attach,Detach,Notify,CreateMessage,HowManyObserver,SomeBusinessLogic
+Class 'Subject' references 'IObserver'
+Class 'Subject' references 'IObserver'
+
+Class Observer => Observer,~Observer,Update,RemoveMeFromTheList,PrintInfo
+
+Class Visitor => VisitConcreteComponentA,VisitConcreteComponentB
+Class 'Visitor' references 'ConcreteComponentA'
+Class 'Visitor' references 'ConcreteComponentB'
+
+Class Component => ~Component,Accept
+Class 'Component' references 'Visitor'
+
+Class ConcreteComponentA => Accept,ExclusiveMethodOfConcreteComponentA
+Class 'ConcreteComponentA' references 'Visitor'
+
+Class ConcreteComponentB => Accept,SpecialMethodOfConcreteComponentB
+Class 'ConcreteComponentB' references 'Visitor'
+
+Class ConcreteVisitor1 => VisitConcreteComponentA,VisitConcreteComponentB
+Class 'ConcreteVisitor1' references 'ConcreteComponentA'
+Class 'ConcreteVisitor1' references 'ConcreteComponentB'
+
+Class ConcreteVisitor2 => VisitConcreteComponentA,VisitConcreteComponentB
+Class 'ConcreteVisitor2' references 'ConcreteComponentA'
+Class 'ConcreteVisitor2' references 'ConcreteComponentB'
+
+Class AbstractProductA => ~AbstractProductA,UsefulFunctionA
+
+Class ConcreteProductA1 => UsefulFunctionA
+
+Class ConcreteProductA2 => UsefulFunctionA
+
+Class AbstractProductB => ~AbstractProductB,UsefulFunctionB,AnotherUsefulFunctionB
+
+Class ConcreteProductB1 => UsefulFunctionB,AnotherUsefulFunctionB
+
+Class ConcreteProductB2 => UsefulFunctionB,AnotherUsefulFunctionB
+
+Class AbstractFactory => CreateProductA,CreateProductB
+Class 'AbstractFactory' uses 'AbstractProductA'
+Class 'AbstractFactory' uses 'AbstractProductB'
+
+Class ConcreteFactory1 => CreateProductA,CreateProductB
+Class 'ConcreteFactory1' uses 'AbstractProductA'
+Class 'ConcreteFactory1' uses 'AbstractProductB'
+
+Class ConcreteFactory2 => CreateProductA,CreateProductB
+Class 'ConcreteFactory2' uses 'AbstractProductA'
+Class 'ConcreteFactory2' uses 'AbstractProductB'
+
+Class Implementation => ~Implementation,OperationImplementation
+
+Class ConcreteImplementationA => OperationImplementation
+
+Class ConcreteImplementationB => OperationImplementation
+
+Class Abstraction => Abstraction,~Abstraction,Operation
+
+Class ExtendedAbstraction => ExtendedAbstraction,Operation
+
+Class Product1 => ListParts
+
+Class Builder => ~Builder,ProducePartA,ProducePartB,ProducePartC
+
+Class ConcreteBuilder1 => ConcreteBuilder1,~ConcreteBuilder1,Reset,ProducePartA,ProducePartB,ProducePartC,GetProduct
+Class 'ConcreteBuilder1' uses 'Product1'
+
+Class Director => set_builder,BuildMinimalViableProduct,BuildFullFeaturedProduct
+
+Class Command => ~Command,Execute
+
+Class SimpleCommand => SimpleCommand,Execute
+
+Class Receiver => DoSomething,DoSomethingElse
+
+Class ComplexCommand => ComplexCommand,Execute
+
+Class Invoker => ~Invoker,SetOnStart,SetOnFinish,DoSomethingImportant
+
+Class IObserver => ~IObserver,Update
+
+Class ISubject => ~ISubject,Attach,Detach,Notify
+
+Class Subject => ~Subject,Attach,Detach,Notify,CreateMessage,HowManyObserver,SomeBusinessLogic
+
+Class Observer => Observer,~Observer,Update,RemoveMeFromTheList,PrintInfo
+
+Class Visitor => VisitConcreteComponentA,VisitConcreteComponentB
+
+Class Component => ~Component,Accept
+
+Class ConcreteComponentA => Accept,ExclusiveMethodOfConcreteComponentA
+
+Class ConcreteComponentB => Accept,SpecialMethodOfConcreteComponentB
+
+Class ConcreteVisitor1 => VisitConcreteComponentA,VisitConcreteComponentB
+
+Class ConcreteVisitor2 => VisitConcreteComponentA,VisitConcreteComponentB

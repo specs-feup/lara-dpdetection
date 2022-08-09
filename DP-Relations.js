@@ -1,7 +1,7 @@
-import lcl.LaraCommonLanguage;
-import weaver.Query;
+laraImport("lcl.LaraCommonLanguage");
+laraImport("weaver.Query");
 
-aspectdef Relations
+//aspectdef Relations
 
 	testClassJp();
 	testInterfaceJp();
@@ -12,8 +12,13 @@ aspectdef Relations
 	RelationInherit();
 	RelationReferences();
 	RelationUses();
-	
-end
+
+	// Load exepected output file and compare
+	const expectedOutputFile = Io.getPath(WeaverOptions.getData().getContextFolder() + "/expected_outputs/",
+						"relations-" + Weaver.getName() + ".txt");
+	const actualOutputFile = Io.getPath(WeaverOptions.getData().getContextFolder() + "/relations-clava.txt");
+	Check.strings(Io.readFile(actualOutputFile), Io.readFile(expectedOutputFile));	
+//end
 
 function testClassJp() {
 

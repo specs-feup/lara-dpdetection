@@ -63,3 +63,4 @@ jobs:
         run: |
           # cd ${{ github.workspace }}
           ../clava/clava -c config-grouping.clava
+          ../clava/clava -c config-relations.clava          

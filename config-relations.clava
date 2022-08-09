@@ -48,7 +48,7 @@
     </entry>
     <entry>
       <string>javascript</string>
-      <boolean>false</boolean>
+      <boolean>true</boolean>
     </entry>
     <entry>
       <string>Disable Remote Dependencies</string>
@@ -118,8 +118,8 @@
     <entry>
       <string>log</string>
       <OptionalFile>
-        <file></file>
-        <used>false</used>
+        <file>relations-clava.txt</file>
+        <used>true</used>
       </OptionalFile>
     </entry>
     <entry>
@@ -177,7 +177,7 @@
     </entry>
     <entry>
       <string>aspect</string>
-      <file>DP-Relations.lara</file>
+      <file>DP-Relations.js</file>
     </entry>
     <entry>
       <string>ignoreHeaderIncludes</string>
