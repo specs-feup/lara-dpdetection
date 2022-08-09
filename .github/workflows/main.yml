@@ -66,7 +66,7 @@ jobs:
           ../clava/clava -c config-relations.clava          
 
       # Run Kadabra tests
-      - name: Clava tests 
+      - name: Kadabra tests 
         run: |
           # cd ${{ github.workspace }}
-          java -jar kadabra.jar -c config-relations.kadabra                    
+          java -jar ../kadabra/kadabra.jar -c config-relations.kadabra                    
