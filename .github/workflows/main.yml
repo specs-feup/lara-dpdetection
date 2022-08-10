@@ -9,6 +9,9 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+  schedule:
+      # Every Wednesday 05h25m UTC
+      - cron: '25 5 * * 3'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -74,7 +77,7 @@ jobs:
           # cd ${{ github.workspace }}
           java -jar ../kadabra/kadabra.jar -c config-relations.kadabra                    
           # This example takes a long time to execute
-          #java -jar ../kadabra/kadabra.jar -c config-repos-ant.kadabra                    
+          java -jar ../kadabra/kadabra.jar -c config-repos-ant.kadabra                    
           java -jar ../kadabra/kadabra.jar -c config-repos-awt.kadabra                  
           java -jar ../kadabra/kadabra.jar -c config-repos-jhotdraw.kadabra                
           java -jar ../kadabra/kadabra.jar -c config-repos-junit.kadabra                 
