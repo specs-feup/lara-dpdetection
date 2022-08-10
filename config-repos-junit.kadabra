@@ -9,7 +9,7 @@
       <string>workspace</string>
       <FileList>
         <fileList>
-          <file>projects/Cpp_J-Unit/junit3.4/src/junit</file>
+          <file>projects\Cpp_J-Unit\junit3.4\src\junit</file>
         </fileList>
       </FileList>
     </entry>
@@ -77,7 +77,7 @@
     </entry>
     <entry>
       <string>aspect</string>
-      <file>DP-Detection.lara</file>
+      <file>DP-Detection.js</file>
     </entry>
     <entry>
       <string>stack trace</string>

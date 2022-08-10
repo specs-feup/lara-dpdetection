@@ -9,7 +9,7 @@
       <string>workspace</string>
       <FileList>
         <fileList>
-          <file>projects/P-MARt/5 - JUnit v3.7/src/junit</file>
+          <file>projects\P-MARt\5 - JUnit v3.7\src\junit</file>
         </fileList>
       </FileList>
     </entry>
@@ -77,7 +77,7 @@
     </entry>
     <entry>
       <string>aspect</string>
-      <file>DP-Detection.lara</file>
+      <file>DP-Detection.js</file>
     </entry>
     <entry>
       <string>stack trace</string>

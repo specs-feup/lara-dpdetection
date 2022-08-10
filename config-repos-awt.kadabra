@@ -9,13 +9,19 @@
       <string>workspace</string>
       <FileList>
         <fileList>
-          <file>projects/DP-CORE_Projects/awt-jdk6/src</file>
+          <file>projects\DP-CORE_Projects\awt-jdk6\src</file>
         </fileList>
       </FileList>
     </entry>
     <entry>
       <string>write_code</string>
       <boolean>true</boolean>
+    </entry>
+    <entry>
+      <string>apkPackageFilter</string>
+      <StringList>
+        <stringList/>
+      </StringList>
     </entry>
     <entry>
       <string>log</string>
@@ -71,7 +77,7 @@
     </entry>
     <entry>
       <string>aspect</string>
-      <file>DP-Detection.lara</file>
+      <file>DP-Detection.js</file>
     </entry>
     <entry>
       <string>stack trace</string>
@@ -121,7 +127,7 @@
     </entry>
     <entry>
       <string>joptions_current_folder_path</string>
-      <java.util.Optional>%XSTREAM_EMPTY_OPTIONAL%</java.util.Optional>
+      <java.util.Optional isPresent="false"/>
     </entry>
     <entry>
       <string>report</string>

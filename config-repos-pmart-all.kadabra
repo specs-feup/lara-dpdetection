@@ -9,21 +9,27 @@
       <string>workspace</string>
       <FileList>
         <fileList>
-          <file>projects/P-MARt/1 - QuickUML 2001/src</file>
-          <file>projects/P-MARt/2 - Lexi v0.1.1 alpha/src</file>
-          <file>projects/P-MARt/3 - JRefactory v2.6.24/src</file>
-          <file>projects/P-MARt/4 - Netbeans v1.0.x/src</file>
-          <file>projects/P-MARt/5 - JUnit v3.7/src</file>
-          <file>projects/P-MARt/6 - JHotDraw v5.1/src</file>
-          <file>projects/P-MARt/8 - MapperXML v1.9.7/src/com</file>
-          <file>projects/P-MARt/10 - Nutch v0.4/src</file>
-          <file>projects/P-MARt/11 - PMD/src/net</file>
+          <file>projects\P-MARt\1 - QuickUML 2001\src</file>
+          <file>projects\P-MARt\2 - Lexi v0.1.1 alpha\src</file>
+          <file>projects\P-MARt\3 - JRefactory v2.6.24\src</file>
+          <file>projects\P-MARt\4 - Netbeans v1.0.x\src</file>
+          <file>projects\P-MARt\5 - JUnit v3.7\src</file>
+          <file>projects\P-MARt\6 - JHotDraw v5.1\src</file>
+          <file>projects\P-MARt\8 - MapperXML v1.9.7\src\com</file>
+          <file>projects\P-MARt\10 - Nutch v0.4\src</file>
+          <file>projects\P-MARt\11 - PMD\src\net</file>
         </fileList>
       </FileList>
     </entry>
     <entry>
       <string>write_code</string>
       <boolean>true</boolean>
+    </entry>
+    <entry>
+      <string>apkPackageFilter</string>
+      <StringList>
+        <stringList/>
+      </StringList>
     </entry>
     <entry>
       <string>log</string>
@@ -79,7 +85,7 @@
     </entry>
     <entry>
       <string>aspect</string>
-      <file>DP-Detection.lara</file>
+      <file>DP-Detection.js</file>
     </entry>
     <entry>
       <string>stack trace</string>
@@ -129,7 +135,7 @@
     </entry>
     <entry>
       <string>joptions_current_folder_path</string>
-      <java.util.Optional>%XSTREAM_EMPTY_OPTIONAL%</java.util.Optional>
+      <java.util.Optional isPresent="false"/>
     </entry>
     <entry>
       <string>report</string>

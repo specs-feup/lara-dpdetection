@@ -73,3 +73,10 @@ jobs:
         run: |
           # cd ${{ github.workspace }}
           java -jar ../kadabra/kadabra.jar -c config-relations.kadabra                    
+          # This example takes a long time to execute
+          #java -jar ../kadabra/kadabra.jar -c config-repos-ant.kadabra                    
+          java -jar ../kadabra/kadabra.jar -c config-repos-awt.kadabra                  
+          java -jar ../kadabra/kadabra.jar -c config-repos-jhotdraw.kadabra                
+          java -jar ../kadabra/kadabra.jar -c config-repos-junit.kadabra                 
+          java -jar ../kadabra/kadabra.jar -c config-repos-pmart.kadabra                  
+          java -jar ../kadabra/kadabra.jar -c config-repos-pmart-all.kadabra                            
