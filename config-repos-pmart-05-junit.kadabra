@@ -9,15 +9,7 @@
       <string>workspace</string>
       <FileList>
         <fileList>
-          <file>projects\P-MARt\1 - QuickUML 2001\src</file>
-          <file>projects\P-MARt\2 - Lexi v0.1.1 alpha\src</file>
-          <file>projects\P-MARt\3 - JRefactory v2.6.24\src</file>
-          <file>projects\P-MARt\4 - Netbeans v1.0.x\src</file>
           <file>projects\P-MARt\5 - JUnit v3.7\src</file>
-          <file>projects\P-MARt\6 - JHotDraw v5.1\src</file>
-          <file>projects\P-MARt\8 - MapperXML v1.9.7\src\com</file>
-          <file>projects\P-MARt\10 - Nutch v0.4\src</file>
-          <file>projects\P-MARt\11 - PMD\src\net</file>
         </fileList>
       </FileList>
     </entry>

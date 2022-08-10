@@ -77,9 +77,18 @@ jobs:
           # cd ${{ github.workspace }}
           java -jar ../kadabra/kadabra.jar -c config-relations.kadabra                    
           # This example takes a long time to execute
-          java -jar ../kadabra/kadabra.jar -c config-repos-ant.kadabra                    
+          #java -jar ../kadabra/kadabra.jar -c config-repos-ant.kadabra                    
           java -jar ../kadabra/kadabra.jar -c config-repos-awt.kadabra                  
           java -jar ../kadabra/kadabra.jar -c config-repos-jhotdraw.kadabra                
           java -jar ../kadabra/kadabra.jar -c config-repos-junit.kadabra                 
-          java -jar ../kadabra/kadabra.jar -c config-repos-pmart.kadabra                  
-          java -jar ../kadabra/kadabra.jar -c config-repos-pmart-all.kadabra                            
+          java -jar ../kadabra/kadabra.jar -c config-repos-pmart-01-quickuml.kadabra
+          java -jar ../kadabra/kadabra.jar -c config-repos-pmart-02-lexi.kadabra
+          java -jar ../kadabra/kadabra.jar -c config-repos-pmart-03-jrefactory.kadabra
+          # This example is throwing a parser exception, spoon.compiler.ModelBuildingException: The type CalcLexer is already defined
+          #java -jar ../kadabra/kadabra.jar -c config-repos-pmart-04-netbeans.kadabra
+          java -jar ../kadabra/kadabra.jar -c config-repos-pmart-05-junit.kadabra
+          java -jar ../kadabra/kadabra.jar -c config-repos-pmart-06-jhotdraw.kadabra
+          java -jar ../kadabra/kadabra.jar -c config-repos-pmart-08-mapperxml.kadabra
+          java -jar ../kadabra/kadabra.jar -c config-repos-pmart-10-nutch.kadabra
+          java -jar ../kadabra/kadabra.jar -c config-repos-pmart-11-pmd.kadabra
+          
