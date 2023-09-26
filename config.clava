@@ -177,7 +177,7 @@
     </entry>
     <entry>
       <string>aspect</string>
-      <file>DP-Detection.lara</file>
+      <file>DP-Detection.js</file>
     </entry>
     <entry>
       <string>ignoreHeaderIncludes</string>

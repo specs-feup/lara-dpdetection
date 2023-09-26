@@ -5,7 +5,7 @@ laraImport("lcl.patterns.PatternsReader");
 laraImport("lcl.patterns.DetectionAlgorithm");
 laraImport("lcl.patterns.grouping.GroupingUtils");
 
-var PRINT_DETAILS = true;
+var PRINT_DETAILS = false;
 var PRINT_RELATIONS = false;
 var DP_CORE_COMPATIBILITY = true;
 var ALGORITHM_FULL_NAMING = true;

@@ -1,0 +1,7 @@
+https://github.com/specs-feup/lara-framework?commit=3c5831f94077233df6f91d1db538af8f310e592b
+https://github.com/specs-feup/specs-java-libs?commit=fa827db586d7b2cbf94fff98873ee339f04cb694
+https://github.com/specs-feup/clava?commit=1145f6304b41a935130258fbb03f0aaf25cb60aa
+--build
+--project ClavaWeaver
+--main pt.up.fe.specs.clava.weaver.ClavaWeaverLauncher
+--jar subfolder
