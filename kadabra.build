@@ -1,6 +1,6 @@
 https://github.com/specs-feup/lara-framework?commit=3c5831f94077233df6f91d1db538af8f310e592b
 https://github.com/specs-feup/specs-java-libs?commit=fa827db586d7b2cbf94fff98873ee339f04cb694
-https://github.com/specs-feup/kadabra?commit=1ff9ff069457de5be40305ad41fd74778cc5f3e2
+https://github.com/specs-feup/kadabra?commit=4016fcfbbe992bc3c781aa055ff51ba5f22e1ae6
 --build
 --project JavaWeaver
 --main weaver.gui.KadabraLauncher
